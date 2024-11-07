@@ -3,7 +3,7 @@ const axios = require('axios');
 const fs = require('fs');
 
 // Replace YOUR_API_TOKEN_HERE with your own API token
-const token = 'TOKEN_TELE';
+const token = '7603465191:AAE9xzX7CJXdH69a5Vu141ojsJ6KlYdc1iU';
 const bot = new TelegramBot(token, { polling: true });
 
 // Create an empty array to store the monitoring URLs
@@ -19,7 +19,7 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   // Send the welcome message to the user
-  bot.sendMessage(chatId, 'Welcome to the Server Monitoring Bot! This bot allows you to monitor your servers and websites and receive notifications when they go down. To get started, use the /add command to add a server or website to be monitored.\n\nBuilt by Mozfire');
+  bot.sendMessage(chatId, 'Welcome to the Server Monitoring Bot! This bot allows you to monitor your servers and websites and receive notifications when they go down. To get started, use the /add command to add a server or website to be monitored.\n\nBuilt by Noob');
 });
 
 bot.onText(/\/add (.+)/, async (msg, match) => {
@@ -76,13 +76,13 @@ setInterval(async () => {
       if (response.status !== 200) {
         // Send a notification to the user if the server or website is down
         // TODO: Retrieve the user ID from the database
-        const chatId = 123456789; // Replace with the user ID
+        const chatId = 6742022802; // Replace with the user ID
         bot.sendMessage(chatId, `The server or website ${url} is down.`);
       }
     } catch (error) {
       // Send a notification to the user if there is an error
       // TODO: Retrieve the user ID from the database
-      const chatId = 123456789; // Replace with the user ID
+      const chatId = 6742022802; // Replace with the user ID
       bot.sendMessage(chatId, `There was an error checking the server or website ${url}.`);
     }
   }
@@ -93,4 +93,4 @@ bot.on('polling_error', (error) => {
   console.log(error);
 });
 console.log('Server Monitoring Bot is running!');
-console.log('Built by Mozfire'); // Replace with your own name or company name
+console.log('Built by @Noob_je'); // Replace with your own name or company name
